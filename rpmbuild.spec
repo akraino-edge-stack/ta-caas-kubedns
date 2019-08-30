@@ -15,8 +15,9 @@
 %define COMPONENT kubedns
 %define RPM_NAME caas-%{COMPONENT}
 %define RPM_MAJOR_VERSION 1.15.4
-%define RPM_MINOR_VERSION 2
+%define RPM_MINOR_VERSION 3
 %define IMAGE_TAG %{RPM_MAJOR_VERSION}-%{RPM_MINOR_VERSION}
+%define go_version 1.12.9
 
 Name:           %{RPM_NAME}
 Version:        %{RPM_MAJOR_VERSION}
@@ -49,7 +50,8 @@ docker build \
   --build-arg http_proxy="${http_proxy}" \
   --build-arg https_proxy="${https_proxy}" \
   --build-arg no_proxy="${no_proxy}" \
-  --build-arg KUBEDNS="%{RPM_MAJOR_VERSION}" \
+  --build-arg KUBEDNS_VERSION="%{RPM_MAJOR_VERSION}" \
+  --build-arg go_version="%{go_version}" \
   --tag %{COMPONENT}:%{IMAGE_TAG} \
   %{_builddir}/%{RPM_NAME}-%{RPM_MAJOR_VERSION}/docker-build/%{COMPONENT}/
 
