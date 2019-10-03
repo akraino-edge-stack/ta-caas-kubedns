@@ -14,8 +14,8 @@
 
 %define COMPONENT kubedns
 %define RPM_NAME caas-%{COMPONENT}
-%define RPM_MAJOR_VERSION 1.15.4
-%define RPM_MINOR_VERSION 4
+%define RPM_MAJOR_VERSION 1.15.6
+%define RPM_MINOR_VERSION 0
 %define IMAGE_TAG %{RPM_MAJOR_VERSION}-%{RPM_MINOR_VERSION}
 %define go_version 1.12.9
 
